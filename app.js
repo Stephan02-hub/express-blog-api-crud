@@ -1,9 +1,11 @@
 const express = require('express');
-const dolci = require('./dolci');
+const dolci = require('./data/dolci');
 const app = express()
 const port = 3000
 app.use(express.static('public'))
-const router = express.Router();
+const postsRouter = require("./routers/postRouter")
+app.use("/posts", postsRouter);
+const controller = require("../controllers/controlloCibo");
 
 app.get('/', (req, res) => {
   res.send('Server del mio blog')
