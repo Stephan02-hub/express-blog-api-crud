@@ -14,14 +14,10 @@ router.get('/dolci', controlloCibo.index);
 router.get('/dolci/:id', controlloCibo.show); (req, res)=> 
 
 // create
-router.post("/dolci", (req, res) => {
-    res.send("Creazione nuovo post");
-  });
+router.post("/dolci", controlloCibo.create);
 
 // update
-router.put("/dolci/:id", (req, res) => {
-    res.send(`Modifica integrale del post: ${req.params.id}`);
-  });
+router.put("/dolci/:id", controlloCibo.update);
 
 // modify
 router.patch("/dolci/:id", (req, res) => {
